@@ -4,18 +4,19 @@
  * bubble_sort - Sorts an array of integers using the Bubble sort algorithm.
  * @array: The array to be sorted
  * @size: Size of the array
+ *
  */
 
 void bubble_sort(int *array, size_t size)
 {
-	size_t x = 0;
-	size_t y = 0;
+	size_t x, y;
 	int temp;
-	int swpd = 0;
+	int swpd;
 
-	for (x ; x < size - 1; x++)
+	for (x = 0; x < size - 1; x++)
 	{
-		for (y ; y < size - x - 1; ++y)
+		swpd = 0;
+		for (y = 0 ; y < size - x - 1; ++y)
 		{
 			if (array[y] > array[y + 1])
 			{
