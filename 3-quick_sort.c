@@ -12,7 +12,7 @@ void quick_sort(int *array, size_t size)
 	if (size < 2)
 		return;
 
-	lomuto_part(array, size, size - 1);
+	lomuto_part(array, size, 0, size - 1);
 	print_array(array, size);
 
 	quick_sort(array, size / 2);
@@ -28,7 +28,7 @@ void quick_sort(int *array, size_t size)
  * Return: Index of the pivot element
  */
 
-int lomuto_part(int *array, int min, int max)
+int lomuto_part(int *array, size_t size, int min, int max)
 {
 	int pivot = array[max];
 	int j = min - 1;
