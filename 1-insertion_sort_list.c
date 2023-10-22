@@ -31,7 +31,6 @@ void insertion_sort_list(listint_t **list)
 			sorted = current;
 			*list = sorted;
 		}
-
 		else
 		{
 			temp = sorted;
