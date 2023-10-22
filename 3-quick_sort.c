@@ -9,14 +9,15 @@
 
 void quick_sort(int *array, size_t size)
 {
+	int pivot_index;
 	if (size < 2)
 		return;
 
-	lomuto_part(array, size, 0, size - 1);
+	pivot_index = lomuto_part(array, size, 0, size - 1);
 	print_array(array, size);
 
-	quick_sort(array, size / 2);
-	quick_sort(array + size / 2, size - size / 2);
+	quick_sort(array, pivot_index);
+	quick_sort(array + pivot_index + 1, size - pivot_index - 1);
 }
 
 /**
@@ -30,9 +31,12 @@ void quick_sort(int *array, size_t size)
 
 int lomuto_part(int *array, size_t size, int min, int max)
 {
+
 	int pivot = array[max];
 	int j = min - 1;
 	int i = min;
+
+	(void)size;
 
 	for (; i <= max - 1; i++)
 	{
