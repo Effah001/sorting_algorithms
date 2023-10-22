@@ -33,6 +33,7 @@ int lomuto_part(int *array, size_t size, int min, int max)
 	int pivot = array[max];
 	int j = min - 1;
 	int i = min;
+
 	for (; i <= max - 1; i++)
 	{
 		if (array[i] < pivot)
