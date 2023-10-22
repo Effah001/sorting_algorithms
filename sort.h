@@ -27,7 +27,7 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
-int lomuto_part(int *array, size_t size, int min, int max);
+int lomuto_part(int *array, int min, int max);
 void swap(int *x, int *y);
 
 
