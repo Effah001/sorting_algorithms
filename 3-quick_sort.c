@@ -43,7 +43,7 @@ int lomuto_part(int *array, size_t size, int min, int max)
 	}
 
 	swap(&array[j + 1], &array[max]);
-	return j + 1;
+	return (j + 1);
 }
 
 /**
@@ -58,5 +58,3 @@ void swap(int *x, int *y)
 	*x = *y;
 	*y = temp;
 }
-	
-
