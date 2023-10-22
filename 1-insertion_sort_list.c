@@ -10,7 +10,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *sorted = NULL;
 	listint_t *unsorted = *list;
-	listint_t  *current;
+	listint_t  *current, *temp;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
@@ -34,7 +34,7 @@ void insertion_sort_list(listint_t **list)
 
 		else
 		{
-			listint_t *temp = sorted;
+			temp = sorted;
 
 			while (temp->next != NULL && current->n > temp->next->n)
 				temp = temp->next;
