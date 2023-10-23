@@ -13,10 +13,9 @@ void quick_sort(int *array, size_t size)
 	if (size < 2)
 		return;
 
-	print_array(array, size);
 	pivot_index = lomuto_part(array, size, 0, size - 1);
-	/**print_array(array, size);
-	*/
+	print_array(array, size);
+
 	quick_sort(array, pivot_index);
 	quick_sort(array + pivot_index + 1, size - pivot_index - 1);
 }
