@@ -23,23 +23,19 @@ void shell_sort(int *array, size_t size)
 	{
 		range = range * 3 + 1;
 	}
-
 	while (range  > 0)
 	{
 		for (x = range; x < size; x++)
 		{
 			tmp = array[x];
 			y = x;
-
 			while (y >= range && array[y - range] > tmp)
 			{
 				array[y] = array[y - range];
 				y -= range;
 			}
-
 			array[y] = tmp;
 		}
-
 		print_array(array, size);
 		range = (range - 1) / 3;
 	}
