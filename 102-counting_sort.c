@@ -1,14 +1,13 @@
 #include "sort.h"
 
-
 /**
  * counting_sort - Sort an array of integers using counting sort algorithm
  * @array: The array to be sorted
  * @size: Size of the array
  */
+
 void counting_sort(int *array, size_t size)
 {
-
 	int max = 0, ln = 0, x = 0;
 	int *count = NULL, *output = NULL;
 
@@ -22,7 +21,6 @@ void counting_sort(int *array, size_t size)
 		if (array[x] > max)
 			max = array[x];
 	}
-
 	count = malloc(sizeof(int) * (max + 1));
 	if (count == NULL)
 		return;
@@ -35,7 +33,6 @@ void counting_sort(int *array, size_t size)
 
 	for (x = 1; x <= max; x++)
 		count[x] += count[x - 1];
-
 	print_array(count, max + 1);
 
 	output = malloc(sizeof(int) * size);
@@ -49,10 +46,8 @@ void counting_sort(int *array, size_t size)
 		output[count[array[x]] - 1] = array[x];
 			count[array[x]]--;
 	}
-
 	for (x = 0; x < ln; x++)
 		array[x] = output[x];
-
 	free(count);
 	free(output);
 }
