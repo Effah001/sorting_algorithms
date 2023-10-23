@@ -8,50 +8,51 @@
  */
 void counting_sort(int *array, size_t size)
 {
-    int max = 0, x = 0;
-    int *count = NULL, *output = NULL;
 
-    if (!array || size < 2)
-        return;
+	int max = 0, ln = 0, x = 0;
+	int *count = NULL, *output = NULL;
 
-    max = array[0]
-    for (x = 1; x < size; x++)
-    {
-        if (array[x] > max)
-            max = array[x];
-    }
+	if (!array || size < 2)
+		return;
 
-    count = malloc(sizeof(int) * (max + 1));
-    if (count == NULL)
-        return;
+	ln = size;
+	max = array[0];
+	for (x = 1; x < ln; x++)
+	{
+		if (array[x] > max)
+			max = array[x];
+	}
 
-     for (x = 0; i <= max; x++)
-        count[x] = 0;
+	count = malloc(sizeof(int) * (max + 1));
+	if (count == NULL)
+		return;
 
-    for (x = 0; x < size; x++)
-        count[array[x]]++;
+	for (x = 0; x <= max; x++)
+		count[x] = 0;
 
-     for (x = 1; x <= max; x++)
-	     count[x] += count[x - 1];
+	for (x = 0; x < ln; x++)
+		count[array[x]]++;
 
-    print_array(count, max + 1);
+	for (x = 1; x <= max; x++)
+		count[x] += count[x - 1];
 
-    output = malloc(sizeof(int) * size);
-    if (output == NULL)
-    {
-        free(count);
-        return;
-    }
+	print_array(count, max + 1);
 
-    for (x = size - 1; x >= 0; x--)
-    {
-	    output[count[array[x]] - 1] = array[x]
-	    count[array[x]]--;
-    }
-     for (x = 0; x < size; x++)
-	array[x] = output[x];
+	output = malloc(sizeof(int) * size);
+	if (output == NULL)
+	{
+		free(count);
+		return;
+	}
+	for (x = size - 1; x >= 0; x--)
+	{
+		output[count[array[x]] - 1] = array[x];
+			count[array[x]]--;
+	}
 
-    free(count);
-    free(output);
+	for (x = 0; x < ln; x++)
+		array[x] = output[x];
+
+	free(count);
+	free(output);
 }
-  
