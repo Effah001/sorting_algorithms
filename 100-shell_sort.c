@@ -16,6 +16,9 @@ void shell_sort(int *array, size_t size)
 	int tmp;
 	size_t x = range;
 
+	if (!array || size < 2)
+		return;
+
 	while (range <= size / 3)
 	{
 		range = range * 3 + 1;
