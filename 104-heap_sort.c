@@ -22,6 +22,7 @@ void sift_down(int *array, size_t size, size_t root)
 	if (max != root)
 	{
 		int temp = array[root];
+
 		array[root] = array[max];
 		array[max] = temp;
 		print_array(array, size);
@@ -51,6 +52,7 @@ void heap_sort(int *array, size_t size)
 	for (; j > 0; j--)
 	{
 		int temp = array[0];
+
 		array[0] = array[j];
 		array[j] = temp;
 		print_array(array, size);
