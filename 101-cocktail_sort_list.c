@@ -24,6 +24,8 @@ void cocktail_sort_list(listint_t **list)
 			if (start->n > start->next->n)
 			{
 				swap_nodes(start, start->next);
+				if (start->prev == NULL)
+					*list = start;
 				print_list(*list);
 				swp = 1;
 			}
@@ -36,12 +38,16 @@ void cocktail_sort_list(listint_t **list)
 		if (!swp)
 			break;
 		swp = 0;
+		end = start;
+		start = start->prev;
 
 		while (start->prev)
 		{
 			if (start->n < start->prev->n)
 			{
 				swap_nodes(start->prev, start);
+				if (start->prev == NULL)
+					*list = start;
 				print_list(*list);
 				swp = 1;
 			}
