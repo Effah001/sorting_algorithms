@@ -13,7 +13,6 @@ void quick_sort(int *array, size_t size)
 
 	if (array == NULL || size < 2)
 		return;
-	
 
 	pivot_index = lomuto_part(array, size, 0, size - 1);
 	print_array(array, size);
@@ -49,7 +48,7 @@ int lomuto_part(int *array, size_t size, int min, int max)
 				swap(&array[j], &array[i]);
 		}
 	}
-	
+
 	swap(&array[j + 1], &array[max]);
 	return (j + 1);
 }
