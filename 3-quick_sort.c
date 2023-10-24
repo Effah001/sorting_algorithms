@@ -42,15 +42,12 @@ int lomuto_part(int *array, size_t size, int min, int max)
 
 	for (; i <= max - 1; i++)
 	{
-
 		if (array[i] < pivot)
 		{
 			j++;
-			if (i != j)
-			{
+
 				swap(&array[j], &array[i]);
 				print_array(array, size);
-			}
 		}
 	}
 	
