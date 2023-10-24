@@ -11,8 +11,9 @@ void quick_sort(int *array, size_t size)
 {
 	int pivot_index;
 
-	if (size < 2)
+	if (array == NULL || size < 2)
 		return;
+	
 
 	pivot_index = lomuto_part(array, size, 0, size - 1);
 	print_array(array, size);
@@ -45,13 +46,18 @@ int lomuto_part(int *array, size_t size, int min, int max)
 		if (array[i] < pivot)
 		{
 			j++;
-			swap(&array[j], &array[i]);
+			if (i != j)
+			{
+				swap(&array[j], &array[i]);
+				print_array(array, size);
+			}
 		}
 	}
-
+	
 	swap(&array[j + 1], &array[max]);
 	return (j + 1);
 }
+
 
 /**
  * swap - swaps two integers
